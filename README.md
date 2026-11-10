@@ -10,6 +10,42 @@
 
 [查看全部项目 →](https://github.com/VpSanta33?tab=repositories) &nbsp;&nbsp; [在线体验 SRC Observatory ↗](https://vpsanta33.github.io/SRC-Monitoring/)
 
+## 技术栈
+
+<p>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/GoLang.svg"><img src="assets/icons/GoLang.svg" width="42" height="42" alt="Go" title="Go"></picture>&nbsp;
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/Java-Dark.svg"><img src="assets/icons/Java-Light.svg" width="42" height="42" alt="Java" title="Java"></picture>&nbsp;
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/React-Dark.svg"><img src="assets/icons/React-Light.svg" width="42" height="42" alt="React" title="React"></picture>&nbsp;
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/VueJS-Dark.svg"><img src="assets/icons/VueJS-Light.svg" width="42" height="42" alt="Vue" title="Vue"></picture>&nbsp;
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/TypeScript.svg"><img src="assets/icons/TypeScript.svg" width="42" height="42" alt="TypeScript" title="TypeScript"></picture>&nbsp;
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/Docker.svg"><img src="assets/icons/Docker.svg" width="42" height="42" alt="Docker" title="Docker"></picture>&nbsp;
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/GithubActions-Dark.svg"><img src="assets/icons/GithubActions-Light.svg" width="42" height="42" alt="GitHub Actions" title="GitHub Actions"></picture>&nbsp;
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/PostgreSQL-Dark.svg"><img src="assets/icons/PostgreSQL-Light.svg" width="42" height="42" alt="PostgreSQL" title="PostgreSQL"></picture>&nbsp;
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/Redis-Dark.svg"><img src="assets/icons/Redis-Light.svg" width="42" height="42" alt="Redis" title="Redis"></picture>&nbsp;
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/Git.svg"><img src="assets/icons/Git.svg" width="42" height="42" alt="Git" title="Git"></picture>&nbsp;
+</p>
+
+`Go` · `Java` · `React` · `Vue` · `TypeScript` · `Docker` · `GitHub Actions` · `PostgreSQL` · `Redis` · `Git`
+
+## GitHub 动态
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="profile/stats-dark.svg">
+    <img src="profile/stats-light.svg" width="49%" alt="GitHub 公开活动统计">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="profile/languages-dark.svg">
+    <img src="profile/languages-light.svg" width="49%" alt="公开仓库的代码语言分布">
+  </picture>
+</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="profile/streak-dark.svg">
+  <img src="profile/streak-light.svg" width="100%" alt="GitHub 总贡献、当前连续贡献与最长连续贡献记录">
+</picture>
+
+<sub>每日自动更新公开统计。语言占比反映仓库代码分布；统计口径与更新记录见<a href="docs/profile-cards.md">组件说明</a>。</sub>
+
 ## 精选项目
 
 <table>
@@ -63,12 +99,15 @@
 </tr>
 </table>
 
-## 常用技术
-
-**服务与工具** &nbsp; `Go` · `Java` · `REST APIs`<br>
-**管理界面** &nbsp; `React` · `Vue` · `TypeScript` · `Vite`<br>
-**数据与交付** &nbsp; `PostgreSQL` · `MySQL` · `MongoDB` · `Redis` · `Docker` · `GitHub Actions`
-
 ---
 
 <sub>项目的具体能力、部署方式与进展见各仓库 README。欢迎通过对应仓库的 Issues 交流问题和建议。</sub>
+
+<details>
+<summary>主页组件与设计参考</summary>
+
+统计卡片由 [GitHub Readme Stats Action](https://github.com/stats-organization/github-readme-stats-action) 生成，连续贡献记录来自 [GitHub Readme Streak Stats](https://github.com/DenverCoder1/github-readme-streak-stats)，技术图标来自 [Skill Icons](https://github.com/tandpfun/skill-icons)。
+
+参考：[GitHub Profile 页面仓库使用指南](https://neusoftware.top/articles/2025/09/16/1758012543979.html)。图片由仓库内的工作流定时生成，支持深浅色主题。
+
+</details>
