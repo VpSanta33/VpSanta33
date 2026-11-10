@@ -1,0 +1,107 @@
+name: Refresh profile cards
+on:
+  schedule:
+    - cron: '23 3 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/profile-cards.yml
+
+concurrency:
+  group: profile-cards
+  cancel-in-progress: false
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - mode: light
+            background: ffffff
+            title: 18181b
+            text: 52525b
+            accent: 2563eb
+            border: e4e4e7
+          - mode: dark
+            background: 0d1117
+            title: f0f3f6
+            text: 9198a1
+            accent: 79a6ff
+            border: 30363d
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - name: Public GitHub activity
+        uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21 # v2.1.0
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&show_icons=true&hide_rank=true&card_width=450&custom_title=GitHub%20Activity&bg_color=${{ matrix.background }}&title_color=${{ matrix.title }}&text_color=${{ matrix.text }}&icon_color=${{ matrix.accent }}&border_color=${{ matrix.border }}&border_radius=12&disable_animations=true
+          path: profile/stats-${{ matrix.mode }}.svg
+          fail_on_error: 'true'
+          token: ${{ github.token }}
+      - name: Public repository languages
+        uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21
+        with:
+          card: top-langs
+          options: username=${{ github.repository_owner }}&layout=compact&langs_count=8&card_width=450&custom_title=Languages%20in%20Public%20Repos&bg_color=${{ matrix.background }}&title_color=${{ matrix.title }}&text_color=${{ matrix.text }}&border_color=${{ matrix.border }}&border_radius=12&disable_animations=true
+          path: profile/languages-${{ matrix.mode }}.svg
+          fail_on_error: 'true'
+          token: ${{ github.token }}
+      - name: Contribution streak
+        uses: DenverCoder1/github-readme-streak-stats@125aaaf200620410446ebfa51897fca3607e04fd # v1
+        with:
+          options: user=${{ github.repository_owner }}&card_width=920&card_height=180&background=${{ matrix.background }}&border=${{ matrix.border }}&stroke=${{ matrix.border }}&ring=${{ matrix.accent }}&fire=${{ matrix.accent }}&currStreakNum=${{ matrix.title }}&sideNums=${{ matrix.title }}&currStreakLabel=${{ matrix.accent }}&sideLabels=${{ matrix.text }}&dates=${{ matrix.text }}&border_radius=12&disable_animations=true
+          path: profile/streak-${{ matrix.mode }}.svg
+          token: ${{ github.token }}
+      - uses: actions/upload-artifact@v7.0.2
+        with:
+          name: cards-${{ matrix.mode }}
+          path: profile/
+          retention-days: 1
+          if-no-files-found: error
+
+  publish:
+    needs: generate
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          ref: main
+      - uses: actions/download-artifact@v8.0.2
+        with:
+          pattern: cards-*
+          path: profile/
+          merge-multiple: true
+      - name: Verify complete SVG set
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+          for mode in ('light', 'dark'):
+              for card in ('stats', 'languages', 'streak'):
+                  path = Path(f'profile/{card}-{mode}.svg')
+                  raw = path.read_text()
+                  root = ET.fromstring(raw)
+                  assert root.tag == '{http://www.w3.org/2000/svg}svg' and len(raw) > 1000, path
+                  text = ' '.join(root.itertext()).lower()
+                  for error in ('something went wrong', 'error fetching resource', 'user not found', 'api rate limit exceeded'):
+                      assert error not in text, f'{path}: {error}'
+          PY
+      - name: Publish only successfully generated cards
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add profile/
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Refresh public GitHub profile cards'
+          git push origin HEAD:main
