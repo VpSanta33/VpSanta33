@@ -60,6 +60,12 @@ jobs:
           options: user=${{ github.repository_owner }}&card_width=920&card_height=180&background=${{ matrix.background }}&border=${{ matrix.border }}&stroke=${{ matrix.border }}&ring=${{ matrix.accent }}&fire=${{ matrix.accent }}&currStreakNum=${{ matrix.title }}&sideNums=${{ matrix.title }}&currStreakLabel=${{ matrix.accent }}&sideLabels=${{ matrix.text }}&dates=${{ matrix.text }}&border_radius=12&disable_animations=true
           path: profile/streak-${{ matrix.mode }}.svg
           token: ${{ github.token }}
+      - name: Compact streak for small screens
+        uses: DenverCoder1/github-readme-streak-stats@125aaaf200620410446ebfa51897fca3607e04fd # v1
+        with:
+          options: user=${{ github.repository_owner }}&card_width=450&card_height=195&background=${{ matrix.background }}&border=${{ matrix.border }}&stroke=${{ matrix.border }}&ring=${{ matrix.accent }}&fire=${{ matrix.accent }}&currStreakNum=${{ matrix.title }}&sideNums=${{ matrix.title }}&currStreakLabel=${{ matrix.accent }}&sideLabels=${{ matrix.text }}&dates=${{ matrix.text }}&border_radius=12&disable_animations=true
+          path: profile/streak-compact-${{ matrix.mode }}.svg
+          token: ${{ github.token }}
       - uses: actions/upload-artifact@v7.0.2
         with:
           name: cards-${{ matrix.mode }}
@@ -88,7 +94,7 @@ jobs:
           from pathlib import Path
           import xml.etree.ElementTree as ET
           for mode in ('light', 'dark'):
-              for card in ('stats', 'languages', 'streak'):
+              for card in ('stats', 'languages', 'streak', 'streak-compact'):
                   path = Path(f'profile/{card}-{mode}.svg')
                   raw = path.read_text()
                   root = ET.fromstring(raw)
