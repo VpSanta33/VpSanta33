@@ -32,14 +32,16 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="profile/stats-dark.svg">
-    <img src="profile/stats-light.svg" width="49%" alt="GitHub 公开活动统计">
+    <img src="profile/stats-light.svg" width="415" alt="GitHub 公开活动统计">
   </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="profile/languages-dark.svg">
-    <img src="profile/languages-light.svg" width="49%" alt="公开仓库的代码语言分布">
+    <img src="profile/languages-light.svg" width="415" alt="公开仓库的代码语言分布">
   </picture>
 </p>
 <picture>
+  <source media="(max-width: 767px) and (prefers-color-scheme: dark)" srcset="profile/streak-compact-dark.svg">
+  <source media="(max-width: 767px)" srcset="profile/streak-compact-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="profile/streak-dark.svg">
   <img src="profile/streak-light.svg" width="100%" alt="GitHub 总贡献、当前连续贡献与最长连续贡献记录">
 </picture>
