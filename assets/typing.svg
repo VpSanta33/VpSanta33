@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="52" viewBox="0 0 700 52" role="img" aria-labelledby="title desc">
+<title id="title">Go Developer · Security Tooling · Open Source</title>
+<desc id="desc">Animated introduction for VpSanta3: Go development, asset monitoring, vulnerability management and open source security platforms.</desc>
+<style>
+text { font-family: ui-monospace,SFMono-Regular,Consolas,monospace; font-size: 19px; fill: #2563eb; }
+.line { opacity: 0; animation: show 15s linear infinite; }
+.line-2 { animation-delay: 5s; }
+.line-3 { animation-delay: 10s; }
+.reveal { animation: type 5s steps(42,end) infinite; }
+.cursor { animation: blink .8s steps(2,end) infinite; }
+@keyframes show { 0%,32% {opacity:1} 33%,100% {opacity:0} }
+@keyframes type { 0% {width:0} 45%,80% {width:630px} 98%,100% {width:0} }
+@keyframes blink { 0%,49% {opacity:1} 50%,100% {opacity:0} }
+@media (prefers-color-scheme: dark) { text {fill:#79a6ff} }
+@media (prefers-reduced-motion: reduce) { .line,.reveal,.cursor {animation:none} .line-1 {opacity:1} .line-2,.line-3,.cursor {opacity:0} .reveal {width:630px} }
+</style>
+<defs><clipPath id="typing"><rect class="reveal" x="35" y="0" width="630" height="52"/></clipPath></defs>
+<g class="line line-1" clip-path="url(#typing)"><text x="350" y="33" text-anchor="middle">Go Developer · Security Tooling<tspan class="cursor"> ▌</tspan></text></g>
+<g class="line line-2" clip-path="url(#typing)"><text x="350" y="33" text-anchor="middle">Asset Monitoring · Vulnerability Management<tspan class="cursor"> ▌</tspan></text></g>
+<g class="line line-3" clip-path="url(#typing)"><text x="350" y="33" text-anchor="middle">Building Open Source Security Platforms<tspan class="cursor"> ▌</tspan></text></g>
+
+</svg>
