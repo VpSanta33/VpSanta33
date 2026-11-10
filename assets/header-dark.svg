@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">VpSanta3 — Security tools, built with care.</title>
+<desc id="desc">Go, security engineering and open source. A minimal banner with connected asset, risk and defense nodes.</desc>
+<rect x=".5" y=".5" width="1199" height="299" rx="18" fill="#0d1117" stroke="#30363d"/>
+<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">
+<rect x="48" y="47" width="7" height="7" rx="2" fill="#79a6ff"/>
+<text x="67" y="55" font-size="12" letter-spacing="2.4" fill="#9198a1">SECURITY ENGINEERING / OPEN SOURCE</text>
+<text x="46" y="133" font-size="58" font-weight="700" letter-spacing="-2" fill="#f0f3f6">VpSanta3<tspan fill="#79a6ff">.</tspan></text>
+<text x="48" y="179" font-size="24" letter-spacing="-.5" fill="#f0f3f6">Security tools, built with care.</text>
+<path d="M48 214H650" stroke="#30363d"/>
+<text x="48" y="252" font-size="13" letter-spacing="1.2" fill="#9198a1">GO  /  WEB PLATFORMS  /  SECURITY TOOLING</text>
+<g stroke="#30363d"><path d="M769 64H1147M769 108H1147M769 152H1147M769 196H1147M769 240H1147M803 40V264M847 40V264M891 40V264M935 40V264M979 40V264M1023 40V264M1067 40V264M1111 40V264" stroke-dasharray="2 7"/></g>
+<path d="M849 96H926Q944 96 944 114V151M944 151V202Q944 220 962 220H1062M944 151H1079" stroke="#79a6ff" stroke-opacity=".55" stroke-width="1.5"/>
+<rect x="777" y="69" width="143" height="54" rx="9" fill="#151b23" stroke="#30363d"/>
+<circle cx="799" cy="96" r="4" fill="#79a6ff"/>
+<text x="815" y="101" fill="#f0f3f6" font-size="13" font-weight="600">ASSETS</text>
+<rect x="1006" y="124" width="143" height="54" rx="9" fill="#151b23" stroke="#30363d"/>
+<circle cx="1028" cy="151" r="4" fill="#79a6ff"/>
+<text x="1044" y="156" fill="#f0f3f6" font-size="13" font-weight="600">RISK</text>
+<rect x="991" y="193" width="158" height="54" rx="9" fill="#151b23" stroke="#30363d"/>
+<circle cx="1013" cy="220" r="4" fill="#79a6ff"/>
+<text x="1029" y="225" fill="#f0f3f6" font-size="13" font-weight="600">DEFENSE</text>
+<circle cx="944" cy="151" r="15" fill="#182638" stroke="#79a6ff" stroke-opacity=".5"/>
+<circle cx="944" cy="151" r="4" fill="#79a6ff"/>
+</g>
+</svg>
